@@ -1,4 +1,6 @@
 import Navbar from '@/components/Navbar'
+import { SettingsModal } from '@/components/SettingsModal'
+import { UsbDevicesModal } from '@/components/UsbDevicesModal'
 import '../css/App.css'
 import { Panels } from '@/components/Panels'
 
@@ -8,6 +10,8 @@ function App() {
     <div className='bg-secondary min-h-screen'>
       <Navbar />
       <Panels />
+      <SettingsModal />
+      <UsbDevicesModal />
     </div>
   )
 }

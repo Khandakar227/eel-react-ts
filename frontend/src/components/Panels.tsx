@@ -3,6 +3,8 @@ import {
   ResizablePanel,
   ResizablePanelGroup,
 } from "@/components/ui/resizable";
+import MapPanel from "./MapPanel";
+import { RosNodesPanel } from "./RosNodesPanel";
 
 export function Panels() {
   return (
@@ -13,11 +15,11 @@ export function Panels() {
       <ResizablePanel className="border border-gray-300" defaultSize={40}>
         <ResizablePanelGroup direction="vertical">
           <ResizablePanel className="border border-gray-300" defaultSize={60}>
-            <span className="font-semibold">One</span>
+            <MapPanel />
           </ResizablePanel>
           <ResizableHandle />
-          <ResizablePanel className="border border-gray-300" defaultSize={40}>
-            <span className="font-semibold">Two</span>
+          <ResizablePanel className="border border-gray-300 p-4" defaultSize={40}>
+            <RosNodesPanel />
           </ResizablePanel>
         </ResizablePanelGroup>
       </ResizablePanel>
@@ -37,9 +39,8 @@ export function Panels() {
       </ResizablePanel>
 
       <ResizableHandle />
-      
-      <ResizablePanel className="border border-gray-300" defaultSize={20}>
-            <span className="font-semibold">Five</span>
+
+      <ResizablePanel className="border border-gray-300 p-4" defaultSize={20}>
       </ResizablePanel>
     </ResizablePanelGroup>
   );
