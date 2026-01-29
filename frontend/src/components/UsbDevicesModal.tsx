@@ -2,18 +2,7 @@ import { useEffect, useState } from 'react';
 import { useAtom } from 'jotai';
 import { usbDevicesModalOpenAtom } from '@/lib/usb/usbModalAtom';
 import { usbDevicesAtom, usbDeviceCountAtom } from '@/lib/usb/usbAtoms';
-import type { UsbDevicesResponse } from '@/lib/usb/usbAtoms';
 import { X, RefreshCw, Circle } from 'lucide-react';
-
-// Declare Eel functions
-declare global {
-    interface Window {
-        eel: {
-            // Eel functions return a function that returns a Promise (hence the double call ())
-            get_connected_usb_devices: () => () => Promise<UsbDevicesResponse>;
-        };
-    }
-}
 
 export function UsbDevicesModal() {
     const [isOpen, setIsOpen] = useAtom(usbDevicesModalOpenAtom);
